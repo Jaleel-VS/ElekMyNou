@@ -14,8 +14,10 @@ class Voter(User):
     pass
 
 class Candidate(User):
+    profile_picture: str
     party_name: str
-    manifesto: str
+    manifesto_summary: str
+    manifesto: str # minimum 200 words
 
 class Election(BaseModel):
     election_id: str
