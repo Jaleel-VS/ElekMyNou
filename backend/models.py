@@ -11,7 +11,7 @@ class User(BaseModel):
     nationalID: str
 
 class Voter(User):
-    has_voted: bool = False
+    pass
 
 class Candidate(User):
     party_name: str
