@@ -3,7 +3,7 @@ from db.main import Database
 
 class ElectionService:
     def __init__(self):
-        self.db = Database()
+        self.db = Database.getInstance()
 
     def create_election(self, election: Election):
         self.db.collection('elections').document(election.election_id).set(election.to_dict())

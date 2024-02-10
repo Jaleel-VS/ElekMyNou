@@ -3,7 +3,7 @@ from models import Voter, Candidate
 
 class UserService:
     def __init__(self):
-        self.db = Database()
+        self.db = Database.getInstance()
 
     def create_voter(self, voter: Voter):
         self.db.collection('voters').document(voter.user_id).set(voter.to_dict())

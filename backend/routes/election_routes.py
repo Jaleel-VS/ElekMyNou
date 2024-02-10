@@ -1,5 +1,5 @@
 from models import Election
-from services.vote_service import ElectionService
+from services.election_service import ElectionService
 from fastapi import APIRouter, Depends, HTTPException
 from auth import get_current_user
 from typing import List
