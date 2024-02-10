@@ -15,6 +15,7 @@ class Database:
         return Database.__instance
     
     def __init__(self):
+        self.db = None
         if Database.__instance != None:
             raise Exception("This class is a singleton!")
         else:
@@ -25,7 +26,9 @@ class Database:
         cred = credentials.Certificate(config_path)
         firebase_admin.initialize_app(cred)
         self.db = firestore.client()
-        self.db.document
+
+    def get_db_object(self):
+        return self.db
 
 if __name__ == "__main__":
     db = Database.getInstance()
