@@ -28,9 +28,9 @@ app.add_middleware(
 )
 
 
-app.include_router(election_routes.election_routes)
+# app.include_router(election_routes.election_routes)
 app.include_router(user_routes.user_routes)
-app.include_router(vote_routes.vote_routes)
+# app.include_router(vote_routes.vote_routes)
 
 
 if __name__ == "__main__":
