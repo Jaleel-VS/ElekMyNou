@@ -28,6 +28,9 @@
         <h1 class="text-4xl font-extrabold tracking-tight">Voter Registration</h1>
         <p class="text-gray-500 dark:text-gray-400">Enter your information to register to vote</p>
       </div>
+      <a class=" underline" href="/login">
+				<Button class="w-full mt-4" variant="outline">Already registered? Sign in to vote</Button>
+			</a>
       <div class="grid gap-4">
         <div class="grid grid-cols-2 gap-4 sm:grid-cols-1">
           <div class="space-y-2">
