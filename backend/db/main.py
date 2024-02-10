@@ -1,6 +1,6 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
-import os, sys
+import os
 
 currentdir = os.path.dirname(os.path.realpath(__file__))
 config_path = os.path.join(currentdir, "config.json")
@@ -25,6 +25,7 @@ class Database:
         cred = credentials.Certificate(config_path)
         firebase_admin.initialize_app(cred)
         self.db = firestore.client()
+        self.db.document
 
 if __name__ == "__main__":
     db = Database.getInstance()
