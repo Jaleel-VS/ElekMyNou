@@ -6,10 +6,10 @@ class UserService:
         self.db = Database()
 
     def create_voter(self, voter: Voter):
-        self.db.collection('voters').add(voter.to_dict())
+        self.db.collection('voters').document(voter.user_id).set(voter.to_dict())
 
     def create_candidate(self, candidate: Candidate):
-        self.db.collection('candidates').add(candidate.to_dict())
+        self.db.collection('candidates').document(candidate.user_id).set(candidate.to_dict())
 
     def get_all_voters(self):
         return self.db.collection('voters').get()

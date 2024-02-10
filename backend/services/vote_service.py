@@ -14,7 +14,7 @@ class VoteService:
             if v.get('voter_id') == vote.voter_id:
                 raise HTTPException(status_code=400, detail="Voter has already voted in this election")
             
-        self.db.collection('votes').add(vote.to_dict())
+        self.db.collection('votes').document(vote.vote_id).set(vote.to_dict())
         
 
     def get_all_votes(self):
