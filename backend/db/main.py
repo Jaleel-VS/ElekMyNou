@@ -16,11 +16,8 @@ class Database:
     
     def __init__(self):
         self.db = None
-        if Database.__instance != None:
-            raise Exception("This class is a singleton!")
-        else:
-            Database.__instance = self
-            self.__initFirebase()
+        Database.__instance = self
+        self.__initFirebase()
 
     def __initFirebase(self):
         cred = credentials.Certificate(config_path)
