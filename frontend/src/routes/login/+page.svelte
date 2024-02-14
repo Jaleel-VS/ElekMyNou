@@ -2,8 +2,16 @@
 	import Label from '$lib/components/ui/label/label.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
+	import CountDown from '$lib/components/custom/CountDown.svelte';
+
+	// today
+	let startDate = new Date();
+
+    let endDate = new Date('2024-03-02T00:00:00');
 </script>
 
+
+<CountDown {startDate} {endDate} />
 <div class="flex min-h-screen flex-col items-center justify-center py-6">
 	<div class="w-full max-w-sm space-y-4">
 		<div class="space-y-2 text-center">
