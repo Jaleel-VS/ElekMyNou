@@ -7,7 +7,7 @@
 
 <div class="mx-auto max-w-6xl px-4 flex flex-col gap-4">
     <header class="flex items-center py-6 space-x-4">
-      <a class="flex items-center space-x-2" href="#">
+      <a class="flex items-center space-x-2" href="/">
         <img
           alt="Logo"
           class="rounded-full"
@@ -17,12 +17,7 @@
         />
         <span class="font-bold text-xl">Election Commission</span>
       </a>
-      <nav class="ml-auto flex items-center space-x-4">
-        <a class="font-medium underline" href="#">
-          Election Information
-        </a>
-      </nav>
-    </header>
+      </header>
     <main class="grid gap-8">
       <div class="space-y-2">
         <h1 class="text-4xl font-extrabold tracking-tight">Voter Registration</h1>
