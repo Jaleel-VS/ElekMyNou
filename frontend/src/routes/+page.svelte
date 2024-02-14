@@ -21,13 +21,10 @@
         <h1 class="text-xl font-bold tracking-tighter sm:text-2xl xl:text-3xl">National Elections</h1>
       </div>
       <nav class="ml-auto flex flex-col items-center p-2 gap-3 sm:flex-row sm:items-center sm:gap-6 lg:gap-8">
-        <a class="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <a class="text-sm font-medium hover:underline underline-offset-4" href="/candidates">
           Candidates
         </a>
-        <a class="text-sm font-medium hover:underline underline-offset-4" href="#">
-          Voting Information
-        </a>
-        <a class="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <a class="text-sm font-medium hover:underline underline-offset-4" href="/results">
           Results
         </a>
       </nav>
