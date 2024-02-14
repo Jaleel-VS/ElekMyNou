@@ -3,13 +3,13 @@ from models import Voter, Candidate
 
 class UserService:
     def __init__(self):
-        self.db = Database()
+        self.db = Database.getInstance().get_db_object()
 
     def create_voter(self, voter: Voter):
-        self.db.collection('voters').document(voter.user_id).set(voter.to_dict())
+        self.db.collection('voters').document(voter.user_id).set(dict(voter))
 
     def create_candidate(self, candidate: Candidate):
-        self.db.collection('candidates').document(candidate.user_id).set(candidate.to_dict())
+        self.db.collection('candidates').document(candidate.user_id).set(dict(candidate))
 
     def get_all_voters(self):
         return self.db.collection('voters').get()

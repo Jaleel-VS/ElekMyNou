@@ -4,7 +4,7 @@ from fastapi import HTTPException
 
 class VoteService:
     def __init__(self):
-        self.db = Database()
+        self.db = Database.getInstance().get_db_object()
 
     def create_vote(self, vote: Vote):
         # Check if the voter has already voted in the election
@@ -14,7 +14,7 @@ class VoteService:
             if v.get('voter_id') == vote.voter_id:
                 raise HTTPException(status_code=400, detail="Voter has already voted in this election")
             
-        self.db.collection('votes').document(vote.vote_id).set(vote.to_dict())
+        self.db.collection('votes').document(vote.vote_id).set(dict(vote))
         
 
     def get_all_votes(self):
