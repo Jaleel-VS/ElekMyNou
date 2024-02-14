@@ -23,6 +23,11 @@
 		}
 	}
 
+    // format the time such that it is always 2 digits
+    function formatTime(time: number) {
+        return time < 10 ? `0${time}` : time;
+    }
+
 	let timerInterval: number | undefined;
 
 	onMount(() => {
@@ -40,22 +45,28 @@
 <h2 class="text-center text-2xl font-semibold mb-4">Time Left to Vote</h2>
 
 <div class="flex h-full w-full items-center justify-center">
-	<div class="flex flex-row items-center gap-3">
+	<div class="flex flex-row items-center gap-5">
 		{#if remainingTime.days >= 0}
 			<div class="flex justify-center flex-col">
 				<div class="text-4xl font-semibold">{remainingTime.days}</div>
 				<div class="text-xs font-semibold">days</div>
 			</div>
 			<div class="flex justify-center flex-col">
-				<div class="text-4xl font-semibold">{remainingTime.hours}</div>
+				<div class="text-4xl font-semibold">
+                    {formatTime(remainingTime.hours)}
+                </div>
 				<div class="text-xs font-semibold">hours</div>
 			</div>
 			<div class="flex justify-center flex-col">
-				<div class="text-4xl font-semibold">{remainingTime.minutes}</div>
+				<div class="text-4xl font-semibold">
+                    {formatTime(remainingTime.minutes)}
+                </div>
 				<div class="text-xs font-semibold">minutes</div>
 			</div>
 			<div class="flex justify-center flex-col">
-				<div class="text-4xl font-semibold">{remainingTime.seconds}</div>
+				<div class="text-4xl font-semibold">
+                    {formatTime(remainingTime.seconds)}
+                </div>
 				<div class="text-xs font-semibold">seconds</div>
 			</div>
 		{:else if remainingTime.days === -1}
