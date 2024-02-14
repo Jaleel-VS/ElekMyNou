@@ -3,11 +3,10 @@ from typing import List
 
 class User(BaseModel):
     user_id: str
-    username: str
     first_name: str
     last_name: str
     email: str
-    address: str
+    province: str
     nationalID: str
 
 class Voter(User):
